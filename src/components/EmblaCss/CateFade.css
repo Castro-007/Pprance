@@ -1,0 +1,21 @@
+.embla {
+  position: relative;
+  overflow: hidden;
+}
+
+.embla__container {
+  position: relative;
+  height: 100%;
+}
+
+.embla__slide {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
+.embla__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

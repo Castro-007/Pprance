@@ -1,0 +1,117 @@
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa'
+import { NavBlink } from '../utils'
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-[#0F1621] text-white pt-12 md:pt-16 pb-8 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+          {/* Brand Section */}
+          <div className="col-span-2 lg:col-span-1 space-y-4">
+            <h2 className="text-2xl md:text-3xl font-Playfair font-bold text-white">
+              P.<span className="text-blue-500">Prance</span>
+            </h2>
+            <p className="text-gray-400 font-Nunito text-sm leading-relaxed max-w-sm">
+              Elevating traditional Nigerian fashion with contemporary elegance. 
+              Weaving culture into every stitch for the modern individual.
+            </p>
+            <div className="flex space-x-4 pt-4">
+              {[
+                { icon: FaFacebookF, href: "#" },
+                { icon: FaTwitter, href: "#" },
+                { icon: FaInstagram, href: "#" },
+                { icon: FaLinkedinIn, href: "#" }
+              ].map((social, index) => (
+                <a 
+                  key={index}
+                  href={social.href}
+                  className="w-10 h-10 rounded-full bg-[#192538] flex items-center justify-center text-gray-400 hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out"
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="col-span-1">
+            <h3 className="text-lg md:text-xl font-Manrope font-semibold mb-6 text-white relative inline-block">
+              Quick Links
+              <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-blue-500 rounded-full"></span>
+            </h3>
+            <ul className="space-y-3 font-Nunito text-sm md:text-base">
+              {NavBlink.map((item) => (
+                <li key={item.Id}>
+                  <NavLink 
+                    to={item.Link}
+                    className="text-gray-400 hover:text-blue-500 hover:pl-2 transition-all duration-300 flex items-center"
+                  >
+                    <span className="mr-2 text-blue-500">›</span> {item.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div className="col-span-1">
+            <h3 className="text-lg md:text-xl font-Manrope font-semibold mb-6 text-white relative inline-block">
+              Our Services
+              <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-blue-500 rounded-full"></span>
+            </h3>
+            <ul className="space-y-3 font-Nunito text-sm md:text-base">
+              {['Bespoke Tailoring', 'Ready-To-Wear', 'Styling Consulting', 'Wedding Collections'].map((service, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors duration-300 flex items-center">
+                    <span className="mr-2 text-blue-500 md:hidden">›</span> {service}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div className="col-span-2 lg:col-span-1">
+            <h3 className="text-lg md:text-xl font-Manrope font-semibold mb-6 text-white relative inline-block">
+              Newsletter
+              <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-blue-500 rounded-full"></span>
+            </h3>
+            <p className="text-gray-400 font-Nunito text-sm mb-4">
+              Subscribe to get the latest updates on new collections and exclusive offers.
+            </p>
+            <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+              <input 
+                type="email" 
+                placeholder="Your email address" 
+                className="bg-[#192538] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 border border-gray-700 font-Nunito text-sm placeholder-gray-500"
+              />
+              <button 
+                type="submit"
+                className="bg-blue-500 text-white px-4 py-3 rounded-lg font-Manrope font-semibold hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center gap-2"
+              >
+                Subscribe <FaPaperPlane size={14} />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-500 font-Nunito text-sm text-center md:text-left">
+            &copy; {currentYear} P.Prance Kloding. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-sm text-gray-500 font-Nunito">
+            <a href="#" className="hover:text-blue-500 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-blue-500 transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
