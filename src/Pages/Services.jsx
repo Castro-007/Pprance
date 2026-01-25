@@ -7,7 +7,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import TailorPrecise from '../assets/Images/tailorprecise.jpeg'
 import PatternDraft from '../assets/Images/patterndraft.jpg'
 import NigerianPair from '../assets/Images/SiteImg/HomgBg1.jpg'
-import { ReadyWearColl } from "../utils";
+import { ReadyWearColl } from "../Utils/index";
 import Readysuit from '../assets/Images/Readysuits.jpg'
 
 const Services = () => {

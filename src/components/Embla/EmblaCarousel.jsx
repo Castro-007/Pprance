@@ -2,7 +2,7 @@ import React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Fade from 'embla-carousel-fade'
 import Autoplay from 'embla-carousel-autoplay'
-import { CarouselData } from '../../utils'
+import { CarouselData } from '../../Utils/index'
 import { NavLink } from 'react-router-dom'
 import { MdOutlineArrowRightAlt } from 'react-icons/md'
 

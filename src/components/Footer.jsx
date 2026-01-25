@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa'
-import { NavBlink } from '../utils'
+import { NavBlink } from '../Utils/index'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

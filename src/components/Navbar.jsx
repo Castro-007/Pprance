@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FaTimes, FaBars, FaArrowDown } from 'react-icons/fa'
 import { NavLink, useLocation } from 'react-router-dom'
 import Headroom from 'react-headroom'
-import { NavBlink } from '../utils'
+import { NavBlink } from '../Utils/index'
 import Logo from '../assets/Images/SiteImg/imgi_1.png'
 
 

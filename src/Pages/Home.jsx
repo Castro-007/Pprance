@@ -4,10 +4,10 @@ import EmblaCarousel from "../components/Embla/EmblaCarousel";
 import { CategoryFadeCarousel } from "../components/Embla/CategoryFadeCarousel";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { NavLink } from "react-router";
-import { BlogHome, CollectionData, ServiceCard } from "../utils";
+import { BlogHome, CollectionData, ServiceCard } from "../Utils";
 import { FaArrowRight } from "react-icons/fa";
 import EmblaPerView from "../components/Embla/EmblaPerView";
-import { FashionScroll } from "../utils";
+import { FashionScroll } from "../Utils";
 import Profile from "../assets/Images/SiteImg/prance762.jpg"
 import { client } from "../components/lib/Client";
 import { format } from 'date-fns';

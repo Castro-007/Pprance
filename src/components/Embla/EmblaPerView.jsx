@@ -7,7 +7,7 @@ import {
 } from './EmblaCarouselArrowButtons'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import { SlidesPerView } from '../../utils'
+import { SlidesPerView } from '../../Utils/index'
 import { FaArrowRight } from 'react-icons/fa';
 
 const EmblaPerView = (props) => {
