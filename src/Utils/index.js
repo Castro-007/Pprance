@@ -171,8 +171,8 @@ export const CarouselData = [
   {
     Id: 1,
     Image: Img9,
-    Title: "Summer Collection",
-    Desc: "Explore our vibrant summer collection, featuring light fabrics and bright colors ",
+    Title: "Female Traditional Collections",
+    Desc: "Explore our exquisite Female Traditional collection, featuring vibrant colors and intricate designs.",
   },
   {
     Id: 2,
@@ -183,14 +183,14 @@ export const CarouselData = [
   {
     Id: 3,
     Image: Img11,
-    Title: "Winter Collection",
-    Desc: "Stay warm"
+    Title: "Suit Collection",
+    Desc: "Stay Classy and Elegant with our exclusive Suit Collection."
   },
   {
     Id: 4,
     Image: Unsplash2,
-    Title: "Spring Collection",
-    Desc: "Welcome the season of renewal with our fresh and floral spring collection.",
+    Title: "Traditional Collection",
+    Desc: "Shop from our exclusive varieties Traditional Collection.",
   }
 ]
 

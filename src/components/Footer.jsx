@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa'
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPaperPlane, FaEnvelope } from 'react-icons/fa'
 import { NavBlink } from '../Utils/index'
 
 const Footer = () => {
@@ -21,14 +21,16 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 pt-4">
               {[
-                { icon: FaFacebookF, href: "#" },
+                { icon: FaFacebookF, href: "https://www.facebook.com/share/1AVMfomYuA/" },
                 { icon: FaTwitter, href: "#" },
-                { icon: FaInstagram, href: "#" },
-                { icon: FaLinkedinIn, href: "#" }
+                { icon: FaInstagram, href: "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=l05rkc" },
+                { icon: FaEnvelope, href: "mailto:ppranceklodin@ymail.com" }
               ].map((social, index) => (
                 <a 
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="author"
                   className="w-10 h-10 rounded-full bg-[#192538] flex items-center justify-center text-gray-400 hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out"
                 >
                   <social.icon size={18} />
@@ -43,7 +45,7 @@ const Footer = () => {
               Quick Links
               <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-blue-500 rounded-full"></span>
             </h3>
-            <ul className="space-y-3 font-Nunito text-sm md:text-base">
+            <ul className="space-y-3 font-Nunito text-base md:text-base">
               {NavBlink.map((item) => (
                 <li key={item.Id}>
                   <NavLink 
@@ -63,8 +65,8 @@ const Footer = () => {
               Our Services
               <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-blue-500 rounded-full"></span>
             </h3>
-            <ul className="space-y-3 font-Nunito text-sm md:text-base">
-              {['Bespoke Tailoring', 'Ready-To-Wear', 'Styling Consulting', 'Wedding Collections'].map((service, index) => (
+            <ul className="space-y-3 font-Nunito text-base md:text-base">
+              {['Bespoke Tailoring', 'Ready-To-Wear', 'Styling Consulting', 'Wedding Collections', 'Suits', 'Traditional Wears'].map((service, index) => (
                 <li key={index}>
                   <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors duration-300 flex items-center">
                     <span className="mr-2 text-blue-500 md:hidden">›</span> {service}
@@ -80,7 +82,7 @@ const Footer = () => {
               Newsletter
               <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-blue-500 rounded-full"></span>
             </h3>
-            <p className="text-gray-400 font-Nunito text-sm mb-4">
+            <p className="text-gray-400 font-Nunito text-base mb-4">
               Subscribe to get the latest updates on new collections and exclusive offers.
             </p>
             <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
@@ -109,7 +111,7 @@ const Footer = () => {
             <a href="#" className="hover:text-blue-500 transition-colors">Terms of Service</a>
           </div>
         </div>
-        <a href="https://sanniolayinka-dxz1.onrender.com/" target="_blank" className="font-Anek hover:opacity-50 ease-linear delay-75 flex gap-1 justify-center items-center my-4 text-white text-center mb-4 sma:text-sm mda:text-sm">
+        <a href="https://sanniolayinka-dxz1.onrender.com/" target="_blank" className="font-Anek hover:opacity-50 ease-linear delay-75 flex gap-1 justify-center items-center my-4 text-white text-center mb-4 sma:text-base mda:text-base">
         Developed by{" "} <span className="text-blue-400"> CASTRO</span>
       </a>
       </div>

@@ -16,7 +16,7 @@ const Services = () => {
       <section className="lg:mx-8 sma:mx-4 mda:mx-4 ">
         <div
           loading="lazy"
-          className=" bg-[url('./src/assets/Images/AboutSuitss.jpg')] bg-cover bg-center group relative w-full h-[500px] rounded-2xl"
+          className=" ServiceBg bg-cover bg-center group relative w-full h-[500px] rounded-2xl"
         >
           <div className="absolute top-0 left-0 w-full h-full bg-black/60  rounded-2xl">
             <div className="flex flex-col items-center justify-center h-full">

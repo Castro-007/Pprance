@@ -29,7 +29,7 @@ const Blog = () => {
         "name": author->name,
         "authorImage": author->image
       } | order(publishedAt desc) `
-    ).then((data) => {setStories(data);console.log(data)}).catch(console.error)
+    ).then((data) => {setStories(data);}).catch(console.error)
   }, [])
 
     const categories = ["ALL CATEGORIES", ...new Set(stories.flatMap((x) => x.categories || []).filter(Boolean))];

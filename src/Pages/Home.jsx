@@ -11,6 +11,7 @@ import { FashionScroll } from "../Utils";
 import Profile from "../assets/Images/SiteImg/prance762.jpg"
 import { client } from "../components/lib/Client";
 import { format } from 'date-fns';
+import NumbersAni from "../components/NumberAnis";
 
 
 
@@ -39,32 +40,33 @@ const Home = () => {
        ).then((data) => {setStories(data);console.log(data)}).catch(console.error)
      }, [])
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const items = gsap.utils.toArray('.fashion-item')
-      const totalWidth = items.reduce(
-        (acc, item) => acc + item.offsetWidth + 32,
-        0
-      )
-      gsap.to(items, {
-        x: `-=${totalWidth / 2}`,
-        ease: 'none',
-        duration: 30,
-        repeat: -1,
-      })
-    })
-    return () => ctx.revert()
-  }, [])
+ useEffect(() => {
+  const container = containerRef.current
+  if (!container) return
+
+  gsap.to(container, {
+    xPercent: -50,
+    ease: "none",
+    duration: 30,
+    repeat: -1,
+    force3D: true
+  })
+}, [])
+
 
 
   return (
     <div className=" bg-[#0F1621] py-6 ">
-  
       <EmblaCarousel slides={[0, 1, 2, 3, 4]} options={{ loop: true }} />
       <div className="mt-12  ">
         <div className="flex sma:flex-col mda:flex-col sma:mx-4 mda:mx-4 justify-around gap-16">
           <div className="relative">
-            <img loading="lazy" src={Profile} alt="Prance Image" className="lg:w-[300px] lg:h-[400px] sma:w-[250px] mda:w-[250px] rounded-md  bg-gradient-to-r from-yellow-500 to-amber-300 m-5"/>
+            <img
+              loading="lazy"
+              src={Profile}
+              alt="Prance Image"
+              className="lg:w-[300px] lg:h-[400px] sma:w-[250px] mda:w-[250px] rounded-md  bg-gradient-to-r from-yellow-500 to-amber-300 m-5"
+            />
             {/* <div className="w-[280px] sma:w-[200px] mda:w-[200px] rounded-md left-40 bottom-14 h-60 absolute  bg-gradient-to-r from-lime-400 to-green-200  m-5"></div> */}
           </div>
 
@@ -77,17 +79,25 @@ const Home = () => {
             </h1>
             <p className=" text-white tracking-normal text-base font-Nunito">
               <span className="uppercase text-blue-500">P.Prance KLODING</span>{" "}
-              isn't just a label it's a narrative of Nigerian resilience and
-              elegance. Driven by a vision to elevate traditional attire for the
-              global stage, we blend ancient techniques with futuristic cuts.
+              (Peter Prance Klodin) is a Nigerian-based luxury celebrity fashion
+              brand specializing in bespoke male and female bridal wear,
+              ceremonial attire, Male and female Suits and red carpet fashion. Driven by a vision to
+              elevate traditional attire for the global stage, we blend ancient
+              techniques with futuristic cuts.
             </p>
             <div className="grid grid-cols-2 pt-8 mb-6">
               <div>
-                <h3 className="text-4xl text-blue-500 font-Anek">20+</h3>
+                <h3 className="text-4xl text-blue-500 flex font-Anek">
+                  {" "}
+                  <NumbersAni n={20} />+
+                </h3>
                 <p className="text-white font-Nunito">Years of Experience</p>
               </div>
               <div>
-                <h3 className="text-4xl text-blue-500 font-Anek">500+</h3>
+                <h3 className="text-4xl text-blue-500 flex font-Anek">
+                  {" "}
+                  <NumbersAni n={500} />+
+                </h3>
                 <p className="text-white font-Nunito">Satisfied Clients</p>
               </div>
             </div>
@@ -170,7 +180,7 @@ const Home = () => {
                     className="mt-10 lg:w-[500px] overflow-hidden lg:h-[500px] sma:w-[300px] relative sma:h-[400px] flex sma:flex-col mda:flex-col justify-between items-center gap-8"
                   >
                     <CategoryFadeCarousel images={x.Image} />
-                    
+
                     {/* <div className="hidden group-hover:block ease-linear duration-150 transition absolute top-0 left-0 bg-black/50 p-5 rounded w-full h-full"></div> */}
                     <h2 className="absolute bottom-20 left-10 text-white text-3xl uppercase font-Anek">
                       {x.Title}
@@ -179,7 +189,7 @@ const Home = () => {
                       to="/Collection"
                       className="absolute bottom-10 left-10 text-white border border-blue-500 px-3 py-2 hover:text-blue-600 ease-linear transition duration-150 rounded-lg font-Nunito text-base"
                     >
-                      Explore More {" "}
+                      Explore More{" "}
                       <span className="group-hover:-rotate-45">&rarr;</span>
                     </NavLink>
                   </div>
@@ -188,72 +198,90 @@ const Home = () => {
             </div>
             <div className="my-10 pt-12">
               <div className="flex justify-between">
-              <h1 className="text-4xl sma:text-3xl mda:text-3xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
-              Latest From The Blog
-            </h1>
-              <NavLink>
-                <button className="text-white border group flex gap-2 items-center border-blue-500 px-3 py-2 hover:text-blue-600 ease-linear transition duration-150 rounded-lg font-Nunito text-base">
-                  View All <FaArrowRight className="group-hover:translate-x-1 ease-linear transition duration-150" />
-                </button>
-              </NavLink>
+                <h1 className="text-4xl sma:text-3xl mda:text-3xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
+                  Latest From The Blog
+                </h1>
+                <NavLink>
+                  <button className="text-white border group flex gap-2 items-center border-blue-500 px-3 py-2 hover:text-blue-600 ease-linear transition duration-150 rounded-lg font-Nunito text-base">
+                    View All{" "}
+                    <FaArrowRight className="group-hover:translate-x-1 ease-linear transition duration-150" />
+                  </button>
+                </NavLink>
               </div>
               <div className="grid sma:grid-cols-1 mda:grid-cols-1 grid-cols-2 mt-6">
-                {
-                  BlogHome.map((x) => (
-                    <NavLink to="" className="flex sma:flex-col mda:flex-col justify-around ease-linear transition duration-150 hover:rounded hover:bg-[#192538] p-4" key={x.Id}>
-                      <div>
-                        <img loading="lazy" src={x.Image} className="w-44 object-cover flex justify-center items-center rounded h-44" alt={x.Title} />
-                      </div>
-                      <div className="basis-[60%] sma:basis-[30%] sma:mt-3 mda:mt-3">
-                        <h2 className="text-white text-xl sma:text-base mda:text-base font-Anek">{x.Title}</h2>
-                        <p className="text-slate-500 font-Nunito text-sm mt-2">{x.Desc}</p>
-                        <p className="text-slate-500 text-xs mt-2">{x.Date}</p>
-                        <button className="mt-4 text-white border group flex gap-2 items-center border-blue-500 px-2 py-1 hover:text-blue-600 ease-linear transition duration-150 rounded-lg font-Nunito text-sm">Read More</button>
-                      </div>
-                    </NavLink>
-                  ))
-                }
+                {BlogHome.map((x) => (
+                  <NavLink
+                    to=""
+                    className="flex sma:flex-col mda:flex-col justify-around ease-linear transition duration-150 hover:rounded hover:bg-[#192538] p-4"
+                    key={x.Id}
+                  >
+                    <div>
+                      <img
+                        loading="lazy"
+                        src={x.Image}
+                        className="w-44 object-cover flex justify-center items-center rounded h-44"
+                        alt={x.Title}
+                      />
+                    </div>
+                    <div className="basis-[60%] sma:basis-[30%] sma:mt-3 mda:mt-3">
+                      <h2 className="text-white text-xl sma:text-base mda:text-base font-Anek">
+                        {x.Title}
+                      </h2>
+                      <p className="text-slate-500 font-Nunito text-sm mt-2">
+                        {x.Desc}
+                      </p>
+                      <p className="text-slate-500 text-xs mt-2">{x.Date}</p>
+                      <button className="mt-4 text-white border group flex gap-2 items-center border-blue-500 px-2 py-1 hover:text-blue-600 ease-linear transition duration-150 rounded-lg font-Nunito text-sm">
+                        Read More
+                      </button>
+                    </div>
+                  </NavLink>
+                ))}
               </div>
             </div>
           </div>
           <section className="overflow-hidden w-full pt-20 bg-neutral-950">
-      <div
-        ref={containerRef}
-        className="flex sma:items-center mda:items-center flex-nowrap gap-8 w-max"
-      >
-        {[...FashionScroll, ...FashionScroll].map((item, index) => (
-          <div
-            key={index}
-            className="fashion-item shrink-0 relative min-w-[120px] h-[220px] rounded-xl overflow-hidden"
-            style={{ willChange: 'transform' }}
-          >
-            <img
-              loading="lazy"
-              src={item.Image}
-              alt={item.Label}
-              className="w-full sma:w-36 mda:w-32 h-full object-cover"
-            />
-            {/* <span className="absolute bottom-4 left-4 text-white text-xl font-semibold">
+            <div
+              ref={containerRef}
+              className="flex flex-nowrap gap-8 w-max will-change-transform"
+            >
+              {[...FashionScroll, ...FashionScroll].map((item, index) => (
+                <div
+                  key={index}
+                  className="fashion-item shrink-0 relative min-w-[120px] h-[220px] rounded-xl overflow-hidden"
+                  style={{ willChange: "transform" }}
+                >
+                  <img
+                    loading="lazy"
+                    src={item.Image}
+                    alt={item.Label}
+                    className="w-full sma:w-36 mda:w-32 h-full object-cover"
+                  />
+                  {/* <span className="absolute bottom-4 left-4 text-white text-xl font-semibold">
               {item.Label}
             </span> */}
-          </div>
-        ))}
-      </div>
-      <div className=" -10 py-12 pb-8 bg-[#192538] lg:px-16 sma:px-5 mda:px-5">
-        <div className="flex sma:flex-col mda:flex-col justify-between py-12">
-          <div>
-            <h1 className="text-4xl mb-8 sma:text-2xl mda:text-2xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
-              View our Socials
-            </h1>
-          </div>
-          <div>
-
-<iframe src="https://snapwidget.com/embed/1116059" className="snapwidget-widget border-0 overflow-hidden w-[465px] h-[310px]" allowTransparency="true"  scrolling="no" title="Retail&All"></iframe>
-          </div>
-        </div>
-        
-      </div>
-    </section>
+                </div>
+              ))}
+            </div>
+            <div className=" -10 py-12 pb-8 bg-[#192538] lg:px-16 sma:px-5 mda:px-5">
+              <div className="flex sma:flex-col mda:flex-col justify-between py-12">
+                <div>
+                  <h1 className="text-4xl mb-8 sma:text-2xl mda:text-2xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
+                    View our Socials
+                  </h1>
+                </div>
+                <div>
+                  <iframe
+                    src="https://snapwidget.com/embed/1116059"
+                    className="snapwidget-widget border-0 overflow-hidden w-[465px] h-[310px]"
+                    allowTransparency="true"
+                    scrolling="no"
+                    title="Retail&All"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </div>

@@ -25,9 +25,9 @@ const EmblaCarousel = (props) => {
 
 
   return (
-    <div className="w-full relative h-[800px] py-6 sma:h-[500px] overflow-hidden">
+    <div className="w-full relative h-[800px] py-6  overflow-hidden">
       <div className="w-full flex justify-center items-center h-full" ref={emblaRef}>
-        <div className="flex w-[98%] rounded-lg h-[100%]">
+        <div className="flex w-full rounded-lg h-[100%]">
           {CarouselData.map((item) => (
             <div className="flex-[0_0_100%] w-full h-full relative" key={item.Id}>
               <img

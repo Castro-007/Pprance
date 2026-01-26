@@ -12,11 +12,11 @@ const About = () => {
         <h3 className='text-2xl font-semibold font-Nunito text-blue-500'>THE P.PRANCE'S ODYSSEY</h3>
         <div className='flex gap-8 sma:flex-col mda:flex-col justify-between items-center mt-8'>
           <div className='basis-[50%]'>
-            <h1 className='text-7xl font-Anek text-white'>Crafting Sovereignty</h1>
+            <h1 className='text-7xl font-Anek text-white'>Crafting Sovreignty</h1>
             <img src={SuitHero} className='w-[600px] rounded object-cover ' alt="" />
           </div>
           <div className='basis-[30%] mt-36'>
-            <h3 className='text-sm  font-Anek text-blue-500 mb-5'>A story etched in fabric, where the energy of Lagos meets the refined language of global high tailoring. This is the evolution of P.Prance.</h3>
+            <h3 className='text-base font-Anek text-blue-500 mb-5'>A story etched in fabric, where the energy of Lagos meets the refined language of global high tailoring. This is the evolution of P.Prance.</h3>
             <img src={DressHero} className='w-[400px] h-[400px] rounded object-cover ' alt="" />
           </div>
         </div>
@@ -70,7 +70,7 @@ const About = () => {
           </div>
         </div>
         <div className='pt-10'>
-          <div className="bg-Sewing bg-[url('./src/assets/Images/sewingMachine1.jpg')] bg-cover bg-center group relative w-full h-[500px] rounded-2xl">
+          <div className="bg-Sewingbg bg-cover bg-center group relative w-full h-[500px] rounded-2xl">
             <div className='absolute top-0 left-0 w-full h-full inset-0 bg-black/40 transition-opacity duration-300 flex items-center rounded-2xl justify-center'>
               <div className='text-center  duration-300'>
                 <h3 className='text-white text-3xl font-Playfair mb-2'>The Artistry Behind Every stitch</h3>
