@@ -55,7 +55,7 @@ const Shop = () => {
   const filtered = active === 'All' ? PRODUCTS : PRODUCTS.filter(p => p.category === active)
 
 
-  const WHATSAPP_NUMBER = '2348123456789' // replace with your WhatsApp number without +
+  const WHATSAPP_NUMBER = '2347066396836' // replace with your WhatsApp number without +
   const waLinkFor = (p) => {
     const msg = encodeURIComponent(`Hello P.Prance, I'm interested in "${p.name}" (${p.category}) at ${p.price}. Can we discuss availability and sizing?`)
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`

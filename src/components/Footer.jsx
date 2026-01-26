@@ -109,6 +109,9 @@ const Footer = () => {
             <a href="#" className="hover:text-blue-500 transition-colors">Terms of Service</a>
           </div>
         </div>
+        <a href="https://sanniolayinka-dxz1.onrender.com/" target="_blank" className="font-Anek hover:opacity-50 ease-linear delay-75 flex gap-1 justify-center items-center my-4 text-white text-center mb-4 sma:text-sm mda:text-sm">
+        Developed by{" "} <span className="text-blue-400"> CASTRO</span>
+      </a>
       </div>
     </footer>
   )

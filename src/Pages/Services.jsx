@@ -13,10 +13,10 @@ import Readysuit from '../assets/Images/Readysuits.jpg'
 const Services = () => {
   return (
     <div className="bg-[#0F1621] pb-8">
-      <section className="mx-8 ">
+      <section className="lg:mx-8 sma:mx-4 mda:mx-4 ">
         <div
           loading="lazy"
-          className="bg-Sewing bg-[url('./src/assets/Images/AboutSuitss.jpg')] bg-cover bg-center group relative w-full h-[500px] rounded-2xl"
+          className=" bg-[url('./src/assets/Images/AboutSuitss.jpg')] bg-cover bg-center group relative w-full h-[500px] rounded-2xl"
         >
           <div className="absolute top-0 left-0 w-full h-full bg-black/60  rounded-2xl">
             <div className="flex flex-col items-center justify-center h-full">
@@ -83,7 +83,7 @@ const Services = () => {
                   START YOUR JOURNEY
                 </a>
               </div>
-              <div className="basis-[40%] sma:basis-full mda:basis-full grid grid-cols-2 sma:grid-cols-1 mda:grid-cols-1 auto-rows-[180px] lg:auto-rows-[220px] gap-3">
+              <div className="basis-[40%] sma:basis-full mda:basis-full grid grid-cols-2 sma:grid-cols-1 mda:grid-cols-1 auto-rows-[180px] lg:auto-rows-[220px] gap-5">
                 <img 
                   src={TailorPrecise} 
                   alt="Tailoring Precision" 

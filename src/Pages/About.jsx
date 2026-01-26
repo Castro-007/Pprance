@@ -8,7 +8,7 @@ import AboutSuitss from '../assets/Images/AboutSuitss.jpg'
 const About = () => {
   return (
     <div>
-      <section className='bg-[#0F1621] py-12 px-12'>
+      <section className='bg-[#0F1621] py-12 lg:px-12 sma:px-6 mda:px-6'>
         <h3 className='text-2xl font-semibold font-Nunito text-blue-500'>THE P.PRANCE'S ODYSSEY</h3>
         <div className='flex gap-8 sma:flex-col mda:flex-col justify-between items-center mt-8'>
           <div className='basis-[50%]'>
@@ -58,7 +58,7 @@ const About = () => {
                 <div className={`${idx % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:order-2 md:pl-12'}`}>
                   <p className='font-Manrope text-[#C19B5E] text-lg'>{item.year}</p>
                   <h3 className='font-Manrope tracking-widest uppercase text-xs md:text-sm mt-1'>{item.title}</h3>
-                  <p className={`font-Nunito text-sm text-[#374151] mt-3 max-w-md ${idx % 2 === 0 ? 'md:ml-auto' : ''}`}>
+                  <p className={`font-Nunito text-sm sma:text-lg mda:text-lg text-[#374151] mt-3 max-w-md ${idx % 2 === 0 ? 'md:ml-auto' : ''}`}>
                     {item.desc}
                   </p>
                 </div>

@@ -104,7 +104,7 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
-                  <div>
+                  <div className="hidden">
                     <button
                     onClick={() => setMoreBtn(!moreBtn)}
                     className="bg-blue-500 flex gap-2 ease-linear delay-200 transition-transform transform duration-300 items-center text-white px-5 py-2 rounded-lg font-Manrope text-sm font-semibold hover:bg-blue-600">

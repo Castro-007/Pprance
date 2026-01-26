@@ -33,7 +33,7 @@ const Contact = () => {
     }
   }
 
-  const whatsappLink = 'https://wa.me/2348123456789?text=' + encodeURIComponent('Hello P.Prance, I would like to schedule a fitting/consultation.')
+  const whatsappLink = 'https://wa.me/2347066396836?text=' + encodeURIComponent('Hello P.Prance, I would like to schedule a fitting/consultation.')
 
   return (
     <div className="bg-[#0F1621] min-h-screen">

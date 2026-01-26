@@ -45,7 +45,7 @@ const EmblaCarousel = (props) => {
                   </p>
                   <NavLink 
                     to="/Collection" 
-                    className="inline-flex items-center gap-3 bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors duration-300 font-Manrope font-semibold"
+                    className="inline-flex items-center gap-3 sma:mt-5 mda:mt-5 bg-blue-500 text-white px-8 sma:text-px-4 mda:text-px-4 py-3 rounded-lg hover:bg-blue-600 transition-colors duration-300 font-Manrope font-semibold"
                   >
                     Explore Collection <MdOutlineArrowRightAlt size={24} />
                   </NavLink>

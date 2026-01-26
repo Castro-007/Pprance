@@ -159,7 +159,7 @@ const Home = () => {
           </div>
 
           <div className="my-10 pt-12 lg:px-16 sma:px-5 mda:px-5">
-            <h1 className="text-4xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
+            <h1 className="text-4xl sma:text-3xl mda:text-3xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
               Our Collection
             </h1>
             <div>
@@ -188,7 +188,7 @@ const Home = () => {
             </div>
             <div className="my-10 pt-12">
               <div className="flex justify-between">
-              <h1 className="text-4xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
+              <h1 className="text-4xl sma:text-3xl mda:text-3xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
               Latest From The Blog
             </h1>
               <NavLink>
@@ -219,7 +219,7 @@ const Home = () => {
           <section className="overflow-hidden w-full pt-20 bg-neutral-950">
       <div
         ref={containerRef}
-        className="flex flex-nowrap gap-8 w-max"
+        className="flex sma:items-center mda:items-center flex-nowrap gap-8 w-max"
       >
         {[...FashionScroll, ...FashionScroll].map((item, index) => (
           <div
@@ -231,7 +231,7 @@ const Home = () => {
               loading="lazy"
               src={item.Image}
               alt={item.Label}
-              className="w-full h-full object-cover"
+              className="w-full sma:w-36 mda:w-32 h-full object-cover"
             />
             {/* <span className="absolute bottom-4 left-4 text-white text-xl font-semibold">
               {item.Label}
@@ -240,9 +240,9 @@ const Home = () => {
         ))}
       </div>
       <div className=" -10 py-12 pb-8 bg-[#192538] lg:px-16 sma:px-5 mda:px-5">
-        <div className="flex justify-between py-12">
+        <div className="flex sma:flex-col mda:flex-col justify-between py-12">
           <div>
-            <h1 className="text-4xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
+            <h1 className="text-4xl mb-8 sma:text-2xl mda:text-2xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
               View our Socials
             </h1>
           </div>
