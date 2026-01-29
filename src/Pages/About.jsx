@@ -75,7 +75,7 @@ const About = () => {
               <div className='text-center  duration-300'>
                 <h3 className='text-white text-3xl font-Playfair mb-2'>The Artistry Behind Every stitch</h3>
                 <p className='text-white text-xl font-Anek mb-4'>Discover the craftsmanship that transforms threads into masterpieces.</p>
-                <a href="/Collection" className='text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300 font-Nunito text-sm inline-block'>
+                <a href="/Shop" className='text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300 font-Nunito text-sm inline-block'>
                   View Collection
                 </a>
               </div>

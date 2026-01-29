@@ -68,9 +68,9 @@ const Footer = () => {
             <ul className="space-y-3 font-Nunito text-base md:text-base">
               {['Bespoke Tailoring', 'Ready-To-Wear', 'Styling Consulting', 'Wedding Collections', 'Suits', 'Traditional Wears'].map((service, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors duration-300 flex items-center">
+                  <div className="text-gray-400 hover:text-blue-500 transition-colors duration-300 flex items-center">
                     <span className="mr-2 text-blue-500 md:hidden">›</span> {service}
-                  </a>
+                  </div>
                 </li>
               ))}
             </ul>

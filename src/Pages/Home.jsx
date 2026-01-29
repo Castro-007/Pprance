@@ -89,14 +89,14 @@ const Home = () => {
               <div>
                 <h3 className="text-4xl text-blue-500 flex font-Anek">
                   {" "}
-                  <NumbersAni n={20} />+
+                  <NumbersAni n={25} />+
                 </h3>
                 <p className="text-white font-Nunito">Years of Experience</p>
               </div>
               <div>
                 <h3 className="text-4xl text-blue-500 flex font-Anek">
                   {" "}
-                  <NumbersAni n={500} />+
+                  <NumbersAni n={1000} />+
                 </h3>
                 <p className="text-white font-Nunito">Satisfied Clients</p>
               </div>
@@ -197,12 +197,12 @@ const Home = () => {
               </div>
             </div>
             <div className="my-10 pt-12">
-              <div className="flex justify-between">
-                <h1 className="text-4xl sma:text-3xl mda:text-3xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
+              <div className="flex sma:flex-col  mda:flex-col justify-between">
+                <h1 className="text-4xl sma:mb-5 mda:mb-5 sma:text-2xl mda:text-2xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
                   Latest From The Blog
                 </h1>
-                <NavLink>
-                  <button className="text-white border group flex gap-2 items-center border-blue-500 px-3 py-2 hover:text-blue-600 ease-linear transition duration-150 rounded-lg font-Nunito text-base">
+                <NavLink to='/Blog'>
+                  <button className="text-white sma:mt-5 mda:mt-5 border group flex gap-2 items-center border-blue-500 px-3 py-2 hover:text-blue-600 ease-linear transition duration-150 rounded-lg font-Nunito text-base">
                     View All{" "}
                     <FaArrowRight className="group-hover:translate-x-1 ease-linear transition duration-150" />
                   </button>

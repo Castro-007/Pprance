@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaFilter, FaWhatsapp, FaTag } from 'react-icons/fa'
 import AsoOkeMale1 from '../assets/Images/MTrad/Mtrad1.jpg'
 import AsoOkeMale2 from '../assets/Images/MTrad/Mtrad2.jpg'
@@ -49,6 +49,32 @@ const PRODUCTS = [
 ]
 
 const Shop = () => {
+
+  const [images, setImages] = useState([])
+    const [imagesperpage, setImagesperpage] = useState(3)
+    const [page, setPage] = useState(1)
+    const [loading, setLoading] = useState(false)
+    const [disabledbtn, setdisabledbtn] = useState(false)
+
+    useEffect(() => {
+      setImages(PRODUCTS.slice(0, page * imagesperpage))
+    },[page, imagesperpage])
+
+     const handleMoreLoad = () => {
+      setLoading(true)
+      setTimeout(() => {
+        setPage((prev) => prev + 1)
+        setLoading(false)
+      }, 2000);
+    }
+
+    useEffect(() => {
+      if(images.length === PRODUCTS.length){
+        setdisabledbtn(true)
+      }else{
+        setdisabledbtn(false)
+      }
+    },[images])
 
   const [active, setActive] = useState('All')
 
@@ -136,9 +162,9 @@ const Shop = () => {
             <p className="text-slate-400 font-Nunito">No items found in this category.</p>
           </div>
         )}
-        <a href="/Collection" className="mt-8 w-fit flex justify-center items-center px-6 py-3 bg-blue-600 text-white font-Manrope text-lg rounded-lg hover:bg-blue-700 transition-colors">
-          View Collections
-        </a>
+        <button disabled={disabledbtn} onClick={handleMoreLoad} className="mt-8 w-fit flex justify-center items-center px-6 py-3 bg-blue-600 text-white font-Manrope text-lg rounded-lg hover:bg-blue-700 transition-colors">
+          {loading ? 'Loading...' : disabledbtn ? 'No More Items' : 'Load More'}
+        </button>
       </section>
     </div>
   )

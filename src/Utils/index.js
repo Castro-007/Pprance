@@ -37,6 +37,9 @@ import { FaCalendar, FaGlobe, FaStar } from "react-icons/fa";
 
 
 
+
+
+
 export const BlogData = [
   {
     Id: 1,
@@ -200,7 +203,7 @@ export const ServiceCard = [
     SocialIcon: RxScissors ,
     Title: "Bespoke Tailoring",
     Desc: "Custom made suits and native outfits tailored to your exact measurements for a flawless fit that commands respect.",
-    To: "/Collection",
+    To: "/Shop",
     NavTxt: "Learn More",
   },
   {
@@ -216,7 +219,7 @@ export const ServiceCard = [
     SocialIcon: SiStylelint,
     Title: "Styling and Consulting",
     Desc: "Personalized Wardrobe Consulting to elevate your style for events, weddings or a complete sartorial refresh",
-    To: "",
+    To: "/Contact",
     NavTxt: "Learn More",
   },
  
