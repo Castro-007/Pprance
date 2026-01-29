@@ -70,7 +70,7 @@ const About = () => {
           </div>
         </div>
         <div className='pt-10'>
-          <div className="bg-Sewingbg bg-cover bg-center group relative w-full h-[500px] rounded-2xl">
+          <div className="bg-Sewingbg  bg-cover bg-center group relative w-full h-[500px] rounded-2xl">
             <div className='absolute top-0 left-0 w-full h-full inset-0 bg-black/40 transition-opacity duration-300 flex items-center rounded-2xl justify-center'>
               <div className='text-center  duration-300'>
                 <h3 className='text-white text-3xl font-Playfair mb-2'>The Artistry Behind Every stitch</h3>
