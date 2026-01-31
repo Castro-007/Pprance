@@ -9,6 +9,7 @@ import PatternDraft from '../assets/Images/patterndraft.jpg'
 import NigerianPair from '../assets/Images/SiteImg/HomgBg1.jpg'
 import { ReadyWearColl } from "../Utils/index";
 import Readysuit from '../assets/Images/Readysuits.jpg'
+import Aboutsuitss from '../assets/Images/AboutSuitss.jpg'
 
 const Services = () => {
   return (
@@ -16,7 +17,8 @@ const Services = () => {
       <section className="lg:mx-8 sma:mx-4 mda:mx-4 ">
         <div
           loading="lazy"
-          className=" ServiceBg bg-cover bg-center group relative w-full h-[500px] rounded-2xl"
+          className=" bg-scroll bg-cover lg:bg-center group relative w-full h-[500px] rounded-2xl" 
+          style={{backgroundImage: `url(${Aboutsuitss})`}}
         >
           <div className="absolute top-0 left-0 w-full h-full bg-black/60  rounded-2xl">
             <div className="flex flex-col items-center justify-center h-full">

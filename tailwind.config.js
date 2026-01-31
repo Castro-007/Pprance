@@ -21,7 +21,7 @@ export default {
         Manrope: ["Manrope", "sans-serif"],
       },
       backgroundImage: {
-        'Sewingbg': "url('/assets/Images/sewingMachine1.jpg')",
+        'SewingBg': "url('/assets/Images/sewinghome.jpg')",
         'ServiceBg': "url('/assets/Images/AboutSuitss.jpg')",
       },
     },

@@ -1,10 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPaperPlane, FaEnvelope } from 'react-icons/fa'
 import { NavBlink } from '../Utils/index'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+      const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
+      const [status, setStatus] = useState('idle')
+      const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mojepled'
+  
+        const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('loading')
+    try {
+      const fd = new FormData()
+      fd.append('email', form.email)
+
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: fd
+      })
+      setStatus(res.ok ? 'success' : 'error')
+      if (res.ok) setForm({ email: ''})
+    } catch {
+      setStatus('error')
+    }
+  }
 
   return (
     <footer className="bg-[#0F1621] text-white pt-12 md:pt-16 pb-8 border-t border-gray-800">
@@ -85,18 +112,24 @@ const Footer = () => {
             <p className="text-gray-400 font-Nunito text-base mb-4">
               Subscribe to get the latest updates on new collections and exclusive offers.
             </p>
-            <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
               <input 
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 type="email" 
                 placeholder="Your email address" 
                 className="bg-[#192538] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 border border-gray-700 font-Nunito text-sm placeholder-gray-500"
               />
               <button 
                 type="submit"
+                disabled={status === 'loading'}
                 className="bg-blue-500 text-white px-4 py-3 rounded-lg font-Manrope font-semibold hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center gap-2"
               >
-                Subscribe <FaPaperPlane size={14} />
+                {status === 'loading' ? 'SENDING...' : 'SUBSCRIBE'} <FaPaperPlane size={14} />
               </button>
+              {status === 'success' && <span className="text-green-400 font-Nunito text-sm">Subscribed successfully</span>}
+                {status === 'error' && <span className="text-red-400 font-Nunito text-sm">Unable to send. Check connection or endpoint.</span>}
             </form>
           </div>
         </div>

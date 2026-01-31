@@ -261,27 +261,27 @@ export const SlidesPerView = [
 export const CollectionData = [
   {
     Id: 1,
-    Image: [AsoOkeCollec1, AsoOkeCollec],
+    Image: [AsoOkeCollec1],
     Title: "Male Traditional",
   },
   {
     Id: 2,
-    Image: [AgbadaCollec, AgbadaCollec1],
+    Image: [AgbadaCollec],
     Title: "Agbada",
   },
   {
     Id: 3,
-    Image: [SuitCollec, SuitCollec1],
+    Image: [SuitCollec],
     Title: "MALE Suits",
   },
   {
     Id: 4,
-    Image: [FemaleSuits, FemaleSuits2],
+    Image: [FemaleSuits],
     Title: "FEMALE Suits",
   },
   {
     Id: 5,
-    Image: [FemasoEbi, FemasoEbi1],
+    Image: [FemasoEbi],
     Title: "Female Traditional",
   }
 ]

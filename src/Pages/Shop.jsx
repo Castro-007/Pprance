@@ -51,14 +51,23 @@ const PRODUCTS = [
 const Shop = () => {
 
   const [images, setImages] = useState([])
-    const [imagesperpage, setImagesperpage] = useState(3)
+    const [imagesperpage, setImagesperpage] = useState(7)
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(false)
     const [disabledbtn, setdisabledbtn] = useState(false)
+    const [active, setActive] = useState('All')
+
+    
+      const filteredProducts = active === 'All' ? PRODUCTS : PRODUCTS.filter(p => p.category === active)
+
+  useEffect(() => {
+      setImages(filteredProducts.slice(0, page * imagesperpage))
+    },[page, imagesperpage, active])
 
     useEffect(() => {
-      setImages(PRODUCTS.slice(0, page * imagesperpage))
-    },[page, imagesperpage])
+  setPage(1)
+}, [active])
+
 
      const handleMoreLoad = () => {
       setLoading(true)
@@ -69,16 +78,14 @@ const Shop = () => {
     }
 
     useEffect(() => {
-      if(images.length === PRODUCTS.length){
+      if(images.length === filteredProducts.length){
         setdisabledbtn(true)
       }else{
         setdisabledbtn(false)
       }
-    },[images])
+    },[images, filteredProducts])
 
-  const [active, setActive] = useState('All')
 
-  const filtered = active === 'All' ? PRODUCTS : PRODUCTS.filter(p => p.category === active)
 
 
   const WHATSAPP_NUMBER = '2347066396836' // replace with your WhatsApp number without +
@@ -120,7 +127,7 @@ const Shop = () => {
 
         {/* Product Grid */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[...filtered].sort(() => Math.random() - 0.5).map(p => (
+          {images.map(p => (
             <div key={p.id} className="group rounded-2xl overflow-hidden bg-[#192538] border border-gray-700 hover:border-blue-500 transition-all duration-300">
               <div className="relative h-[320px]">
                 <img
@@ -157,7 +164,7 @@ const Shop = () => {
         </div>
 
         {/* Empty State */}
-        {filtered.length === 0 && (
+        {filteredProducts.length === 0 && (
           <div className="mt-16 text-center">
             <p className="text-slate-400 font-Nunito">No items found in this category.</p>
           </div>

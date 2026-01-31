@@ -1,4 +1,4 @@
-import React, {useState,useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import EmblaCarousel from "../components/Embla/EmblaCarousel";
 import { CategoryFadeCarousel } from "../components/Embla/CategoryFadeCarousel";
@@ -8,20 +8,20 @@ import { BlogHome, CollectionData, ServiceCard } from "../Utils";
 import { FaArrowRight } from "react-icons/fa";
 import EmblaPerView from "../components/Embla/EmblaPerView";
 import { FashionScroll } from "../Utils";
-import Profile from "../assets/Images/SiteImg/prance762.jpg"
+import Profile from "../assets/Images/SiteImg/prance762.jpg";
 import { client } from "../components/lib/Client";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 import NumbersAni from "../components/NumberAnis";
 
-
-
 const Home = () => {
-  const containerRef = useRef(null)
-   const [stories, setStories] = useState([])
+  const containerRef = useRef(null);
+  const [stories, setStories] = useState([]);
 
-    useEffect(() => {
-       client.fetch(
-         `*[_type == "post"]{
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "post"]| order(_createdAt desc)[0...1]{
            title,
            slug,
            body,
@@ -36,24 +36,27 @@ const Home = () => {
            "categories": categories[]->title,
            "name": author->name,
            "authorImage": author->image
-         } | order(publishedAt desc) `
-       ).then((data) => {setStories(data);console.log(data)}).catch(console.error)
-     }, [])
+         } | order(publishedAt desc) `,
+      )
+      .then((data) => {
+        setStories(data);
+        console.log(data);
+      })
+      .catch(console.error);
+  }, []);
 
- useEffect(() => {
-  const container = containerRef.current
-  if (!container) return
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
 
-  gsap.to(container, {
-    xPercent: -50,
-    ease: "none",
-    duration: 30,
-    repeat: -1,
-    force3D: true
-  })
-}, [])
-
-
+    gsap.to(container, {
+      xPercent: -50,
+      ease: "none",
+      duration: 30,
+      repeat: -1,
+      force3D: true,
+    });
+  }, []);
 
   return (
     <div className=" bg-[#0F1621] py-6 ">
@@ -75,15 +78,18 @@ const Home = () => {
               THE MAN BEHIND THE BRAND
             </h2>
             <h1 className="text-white text-5xl sma:text-4xl mda:text-4xl font-Anek mt-5 uppercase ">
-              weaving culture into every stitch
+              weaving culture into every stitch of glamour
             </h1>
             <p className=" text-white tracking-normal text-base font-Nunito">
               <span className="uppercase text-blue-500">P.Prance KLODING</span>{" "}
               (Peter Prance Klodin) is a Nigerian-based luxury celebrity fashion
               brand specializing in bespoke male and female bridal wear,
-              ceremonial attire, Male and female Suits and red carpet fashion. Driven by a vision to
-              elevate traditional attire for the global stage, we blend ancient
-              techniques with futuristic cuts.
+              ceremonial attire, Male and female Suits and red carpet fashion.
+              Prance is the visionary founder and creative director of P-prance
+              Klodin; one of Nigeria’s most respected premium style brands. He
+              is also the founder of P-prance Fashion Academy a fashion school
+              in the heart of Surulere Lagos grooming the next fashion business
+              moguls.
             </p>
             <div className="grid grid-cols-2 pt-8 mb-6">
               <div>
@@ -177,9 +183,15 @@ const Home = () => {
                 {CollectionData.map((x) => (
                   <div
                     key={x.Id}
-                    className="mt-10 lg:w-[500px] overflow-hidden lg:h-[500px] sma:w-[300px] relative sma:h-[400px] flex sma:flex-col mda:flex-col justify-between items-center gap-8"
+                    className="mt-10 lg:w-[500px] group overflow-hidden rounded-2xl lg:h-[500px] sma:w-[300px] relative sma:h-[400px] flex sma:flex-col mda:flex-col justify-between items-center gap-8"
                   >
-                    <CategoryFadeCarousel images={x.Image} />
+                    <img
+                src={x.Image}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover group-hover:scale-110 ease-linear transition duration-300 rounded-2xl"
+                alt=""
+              />
 
                     {/* <div className="hidden group-hover:block ease-linear duration-150 transition absolute top-0 left-0 bg-black/50 p-5 rounded w-full h-full"></div> */}
                     <h2 className="absolute bottom-20 left-10 text-white text-3xl uppercase font-Anek">
@@ -201,7 +213,7 @@ const Home = () => {
                 <h1 className="text-4xl sma:mb-5 mda:mb-5 sma:text-2xl mda:text-2xl font-Manrope text-white underline underline-offset-8 decoration-blue-500">
                   Latest From The Blog
                 </h1>
-                <NavLink to='/Blog'>
+                <NavLink to="/Blog">
                   <button className="text-white sma:mt-5 mda:mt-5 border group flex gap-2 items-center border-blue-500 px-3 py-2 hover:text-blue-600 ease-linear transition duration-150 rounded-lg font-Nunito text-base">
                     View All{" "}
                     <FaArrowRight className="group-hover:translate-x-1 ease-linear transition duration-150" />
@@ -209,34 +221,36 @@ const Home = () => {
                 </NavLink>
               </div>
               <div className="grid sma:grid-cols-1 mda:grid-cols-1 grid-cols-2 mt-6">
-                {BlogHome.map((x) => (
+                {stories.length > 0 ?(stories.map((story) => (
                   <NavLink
-                    to=""
+                    to={`/Blog/${story.slug.current}`}
                     className="flex sma:flex-col mda:flex-col justify-around ease-linear transition duration-150 hover:rounded hover:bg-[#192538] p-4"
-                    key={x.Id}
+                    key={story.slug.current}
                   >
                     <div>
                       <img
                         loading="lazy"
-                        src={x.Image}
+                        src={story.mainImage?.asset?.url}
                         className="w-44 object-cover flex justify-center items-center rounded h-44"
-                        alt={x.Title}
+                        alt={story.mainImage?.alt || story.title}
                       />
                     </div>
                     <div className="basis-[60%] sma:basis-[30%] sma:mt-3 mda:mt-3">
                       <h2 className="text-white text-xl sma:text-base mda:text-base font-Anek">
-                        {x.Title}
+                        {story.title}
                       </h2>
                       <p className="text-slate-500 font-Nunito text-sm mt-2">
-                        {x.Desc}
+                        {story.description}
                       </p>
-                      <p className="text-slate-500 text-xs mt-2">{x.Date}</p>
+                      <p className="text-slate-500 text-xs mt-2">{format(new Date(story.publishedAt), "MMMM dd, yyyy")}</p>
                       <button className="mt-4 text-white border group flex gap-2 items-center border-blue-500 px-2 py-1 hover:text-blue-600 ease-linear transition duration-150 rounded-lg font-Nunito text-sm">
                         Read More
                       </button>
                     </div>
                   </NavLink>
-                ))}
+                ))):(
+                  <div className="text-2xl text-white font-Anek ">No Projects Here yet</div>
+                )}
               </div>
             </div>
           </div>
