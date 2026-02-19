@@ -19,6 +19,7 @@ const Contact = () => {
       const fd = new FormData()
       fd.append('name', form.name)
       fd.append('email', form.email)
+      fd.append('phone', form.phone)
       fd.append('subject', form.subject)
       fd.append('message', form.message)
       const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -27,7 +28,7 @@ const Contact = () => {
         body: fd
       })
       setStatus(res.ok ? 'success' : 'error')
-      if (res.ok) setForm({ name: '', email: '', subject: '', message: '' })
+      if (res.ok) setForm({ name: '', email: '', phone: '', subject: '', message: '' })
     } catch {
       setStatus('error')
     }
@@ -87,6 +88,18 @@ const Contact = () => {
                   placeholder="you@example.com"
                 />
               </div>
+              <div className="col-span-1">
+                <label className="block text-slate-300 font-Nunito text-sm mb-2">Phone</label>
+                <input
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  type="tel"
+                  required
+                  className="w-full bg-[#0F1621] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  placeholder="+234 123 456 7890"
+                />
+              </div>
               <div className="md:col-span-2">
                 <label className="block text-slate-300 font-Nunito text-sm mb-2">Subject</label>
                 <input
@@ -132,20 +145,27 @@ const Contact = () => {
                 <FaMapMarkerAlt className="text-blue-400 mt-1" />
                 <div>
                   <p className="text-white font-Nunito">Lagos, Nigeria</p>
-                  <p className="text-slate-400 font-Nunito text-sm">Festac Town, 2nd Avenue</p>
+                  <p className="text-slate-400 font-Nunito text-sm">21 Olatunde Street, Bakery Bus Stop, Off Babs Animashaun, Surulere</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <FaPhoneAlt className="text-blue-400 mt-1" />
                 <div>
-                  <a href="tel:+2348123456789" className="text-white font-Nunito hover:text-blue-400 transition-colors">+234 812 345 6789</a>
+                  <a href="tel:+2347066396836" className="text-white font-Nunito hover:text-blue-400 transition-colors">+234 706 639 6836</a>
+                  <p className="text-slate-400 font-Nunito text-sm">Mon–Sat, 10:00–18:00 WAT</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <FaPhoneAlt className="text-blue-400 mt-1" />
+                <div>
+                  <a href="tel:+2347035086122" className="text-white font-Nunito hover:text-blue-400 transition-colors">+234 703 508 6122</a>
                   <p className="text-slate-400 font-Nunito text-sm">Mon–Sat, 10:00–18:00 WAT</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <FaEnvelope className="text-blue-400 mt-1" />
                 <div>
-                  <a href="mailto:studio@pprance.com" className="text-white font-Nunito hover:text-blue-400 transition-colors">studio@pprance.com</a>
+                  <a href="mailto:info@pprance-klodin.com" className="text-white font-Nunito hover:text-blue-400 transition-colors">info@pprance-klodin.com</a>
                   <p className="text-slate-400 font-Nunito text-sm">We reply within 24 hours</p>
                 </div>
               </div>
@@ -157,7 +177,7 @@ const Contact = () => {
                 className="rounded-xl w-full h-36 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1541099649105-f69ad21f8a3b?q=80&w=800&auto=format&fit=crop"
+                src='https://images.pexels.com/photos/5656671/pexels-photo-5656671.jpeg'
                 alt="Fabric texture"
                 className="rounded-xl w-full h-36 object-cover"
               />
@@ -167,7 +187,7 @@ const Contact = () => {
                 className="rounded-xl w-full h-36 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1489987707023-5ee04d52f253?q=80&w=800&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1764158302194-54b208aa7f2b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHJ1bndheSUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D"
                 alt="Runway vibe"
                 className="rounded-xl w-full h-36 object-cover"
               />

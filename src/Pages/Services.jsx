@@ -81,9 +81,10 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
-                <a href="/Shop" className='text-white border mt-8 sma:mb-5 mda:mb-5 border-white px-4 py-2 rounded-full hover:bg-blue-500 hover:text-black transition-all duration-300 font-Nunito text-sm inline-block'>
+                <a href="/Contact" className='text-white border mt-8 sma:mb-5 mda:mb-5 border-white px-4 py-2 rounded-full hover:bg-blue-500 hover:text-black transition-all duration-300 font-Nunito text-sm inline-block'>
                   START YOUR JOURNEY
                 </a>
+                <p className="text-sm mt-5 ml-4 font-Anek uppercase text-white">Let us Tailor <span className="text-yellow-500">your Fits!</span> </p>
               </div>
               <div className="basis-[40%] sma:basis-full mda:basis-full grid grid-cols-2 sma:grid-cols-1 mda:grid-cols-1 auto-rows-[180px] lg:auto-rows-[220px] gap-5">
                 <img 
