@@ -10,25 +10,23 @@ export default function LenisProvider({ children }) {
     const lenis = new Lenis({
       duration: 1.2,
       smooth: true,
-      direction: "vertical",
       smoothTouch: false,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
     });
 
     lenisRef.current = lenis;
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    // 🔗 Sync Lenis with GSAP ticker
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
 
-    requestAnimationFrame(raf);
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
+      gsap.ticker.remove(lenis.raf);
       lenis.destroy();
     };
   }, []);
 
-  return <>{children}</>;
+  return children;
 }

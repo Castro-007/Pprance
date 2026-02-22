@@ -170,32 +170,7 @@ export const NavBlink = [
   },
 ];
 
-export const CarouselData = [
-  {
-    Id: 1,
-    Image: Img9,
-    Title: "Female Traditional Collections",
-    Desc: "Explore our exquisite Female Traditional collection, featuring vibrant colors and intricate designs.",
-  },
-  {
-    Id: 2,
-    Image: Img10,
-    Title: "Autumn Collection",
-    Desc: "Discover our cozy autumn collection, perfect for layering and embracing the fall vibes.",
-  },
-  {
-    Id: 3,
-    Image: Img11,
-    Title: "Suit Collection",
-    Desc: "Stay Classy and Elegant with our exclusive Suit Collection."
-  },
-  {
-    Id: 4,
-    Image: Unsplash2,
-    Title: "Traditional Collection",
-    Desc: "Shop from our exclusive varieties Traditional Collection.",
-  }
-]
+
 
 export const ServiceCard = [
   {

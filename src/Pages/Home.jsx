@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useLayoutEffect , useEffect, useRef } from "react";
 import gsap from "gsap";
 import EmblaCarousel from "../components/Embla/EmblaCarousel";
 import { CategoryFadeCarousel } from "../components/Embla/CategoryFadeCarousel";
@@ -14,7 +14,8 @@ import { format } from "date-fns";
 import NumbersAni from "../components/NumberAnis";
 
 const Home = () => {
-  const containerRef = useRef(null);
+ const fashionScrollRef = useRef(null);
+
   const [stories, setStories] = useState([]);
 
 
@@ -45,21 +46,24 @@ const Home = () => {
       .catch(console.error);
   }, []);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(fashionScrollRef.current, {
+        xPercent: -50,
+        ease: "none",
+        duration: 30,
+        repeat: -1,
+        force3D: true,
+      });
+    }, fashionScrollRef);
 
-    gsap.to(container, {
-      xPercent: -50,
-      ease: "none",
-      duration: 30,
-      repeat: -1,
-      force3D: true,
-    });
+    return () => ctx.revert(); // 🔥 THIS STOPS THE CRASH
   }, []);
 
+  
+
   return (
-    <div className=" bg-[#0F1621] py-6 ">
+    <div  className=" bg-[#0F1621] py-6 ">
       <EmblaCarousel slides={[0, 1, 2, 3, 4]} options={{ loop: true }} />
       <div className="mt-12  ">
         <div className="flex sma:flex-col mda:flex-col sma:mx-4 mda:mx-4 justify-around gap-16">
@@ -256,7 +260,7 @@ const Home = () => {
           </div>
           <section className="overflow-hidden w-full pt-20 bg-neutral-950">
             <div
-              ref={containerRef}
+              ref={fashionScrollRef}
               className="flex flex-nowrap gap-8 w-max will-change-transform"
             >
               {[...FashionScroll, ...FashionScroll].map((item, index) => (

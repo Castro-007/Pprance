@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
+import Klodinsuit from '../assets/Images/klodinsuit.jpeg'
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -41,7 +42,7 @@ const Contact = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative w-full h-[420px] rounded-2xl overflow-hidden mt-8">
           <img
-            src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1600&auto=format&fit=crop"
+            src={Klodinsuit}
             alt="Atelier ambience"
             className="w-full h-full object-cover"
           />
@@ -152,14 +153,14 @@ const Contact = () => {
                 <FaPhoneAlt className="text-blue-400 mt-1" />
                 <div>
                   <a href="tel:+2347066396836" className="text-white font-Nunito hover:text-blue-400 transition-colors">+234 706 639 6836</a>
-                  <p className="text-slate-400 font-Nunito text-sm">Mon–Sat, 10:00–18:00 WAT</p>
+                  <p className="text-slate-400 font-Nunito text-sm">Mon–Sat, 9:00–18:00 WAT</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <FaPhoneAlt className="text-blue-400 mt-1" />
                 <div>
                   <a href="tel:+2347035086122" className="text-white font-Nunito hover:text-blue-400 transition-colors">+234 703 508 6122</a>
-                  <p className="text-slate-400 font-Nunito text-sm">Mon–Sat, 10:00–18:00 WAT</p>
+                  <p className="text-slate-400 font-Nunito text-sm">Mon–Sat, 9:00–18:00 WAT</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">

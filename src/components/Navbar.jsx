@@ -3,7 +3,8 @@ import { FaTimes, FaBars, FaArrowDown } from 'react-icons/fa'
 import { NavLink, useLocation } from 'react-router-dom'
 import Headroom from 'react-headroom'
 import { NavBlink } from '../Utils/index'
-import Logo from '../assets/Images/SiteImg/imgi_1.png'
+import Logo from '../assets/Images/Logos/w.png'
+import Logos from '../assets/Images/Logos/b.png'
 
 
 const Navbar = () => {
@@ -76,12 +77,12 @@ const Navbar = () => {
         <nav className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex justify-between items-center h-16'>
                 {/* Logo */}
-                <div className='flex-shrink-0 z-10 transition-all duration-300'>
+                <div className='flex-shrink-0 z-10  transition-all duration-300'>
                   <NavLink to='/' className="block">
                     <img 
-                      src={Logo} 
+                      src={bgClass.includes('transparent') ? Logos : Logo} 
                       alt="P.Prance Logo" 
-                      className={`h-12 w-auto object-contain transition-all duration-300 `} 
+                      className={` w-44 object-contain transition-all duration-300 `} 
                     />
                   </NavLink>
                 </div>

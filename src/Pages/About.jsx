@@ -4,7 +4,7 @@ import DressHero from "../assets/Images/DressHero.jpg";
 import Aboutcity from "../assets/Images/Aboutcity.jpg";
 import Accordion from "../components/Accordion";
 import AboutSuitss from "../assets/Images/AboutSuitss.jpg";
-import SewingBg from "../assets/Images/sewingMachine1.jpg";
+import SewingBg from "../assets/Images/pranceSewing.jpeg";
 
 const About = () => {
   return (
@@ -126,8 +126,8 @@ const About = () => {
             className="bg-SewingBg bg-cover bg-center group relative w-full h-[500px] rounded-2xl bg-scroll"
             style={{ backgroundImage: `url(${SewingBg})` }}
           >
-            <div className="absolute top-0 left-0 w-full h-full inset-0 bg-black/20 bg-scroll transition-opacity duration-300 flex items-center rounded-2xl justify-center">
-              <div className="text-center  duration-300">
+            <div className="absolute top-0 left-0 w-full h-full  bg-black/20 bg-scroll transition-opacity duration-300 flex items-center rounded-2xl justify-center">
+              <div className="text-center bg-slate-500/30 p-8 rounded-2xl duration-300">
                 <h3 className="text-white text-3xl font-Playfair mb-2">
                   The Artistry Behind Every stitch
                 </h3>
