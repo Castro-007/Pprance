@@ -63,7 +63,7 @@ const Home = () => {
   
 
   return (
-    <div  className=" bg-[#0F1621] py-6 ">
+    <div  className=" bg-[#0F1621] ">
       <EmblaCarousel slides={[0, 1, 2, 3, 4]} options={{ loop: true }} />
       <div className="mt-12  ">
         <div className="flex sma:flex-col mda:flex-col sma:mx-4 mda:mx-4 justify-around gap-16">
@@ -193,7 +193,7 @@ const Home = () => {
                 src={x.Image}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover group-hover:scale-110 ease-linear transition duration-300 rounded-2xl"
+                className="lg:w-[470px] h-full object-cover ease-linear transition duration-300 rounded-2xl"
                 alt=""
               />
 
@@ -253,7 +253,7 @@ const Home = () => {
                     </div>
                   </NavLink>
                 ))):(
-                  <div className="text-2xl text-white font-Anek ">No Projects Here yet</div>
+                  <div className="text-2xl text-white font-Anek ">Check back soon No Blogs Here yet</div>
                 )}
               </div>
             </div>

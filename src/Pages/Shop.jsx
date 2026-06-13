@@ -90,7 +90,7 @@ const Shop = () => {
 
   const WHATSAPP_NUMBER = '2347066396836' // replace with your WhatsApp number without +
   const waLinkFor = (p) => {
-    const msg = encodeURIComponent(`Hello P.Prance, I'm interested in "${p.name}" (${p.category}) at ${p.price}. Can we discuss availability and sizing?`)
+    const msg = encodeURIComponent(`Hello P.Prance, I'm interested in "${p.name}" (${p.category}). Can we discuss availability and sizing?`)
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`
   }
 

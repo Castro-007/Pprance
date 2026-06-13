@@ -41,16 +41,19 @@ const EmblaPerView = (props) => {
           {SlidesPerView.map((slide) => (
             <div className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4 min-w-0" key={slide.Id}>
               <div className="relative group overflow-hidden rounded-xl h-[400px]">
-                <img 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                {
+                  slide.Image &&
+                  <img 
+                  className="w-[400px] h-full object-cover transition-transform duration-500" 
                   src={slide.Image} 
                   alt={`Slide ${slide.Id}`} 
-                loading="lazy"
-                />
+                  loading="lazy"
+                  />
+                }
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     {slide.Desc && <h3 className="text-white text-2xl font-Playfair mb-2">{slide.Desc}</h3>}
-                    <NavLink to="/Collection" className="text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300 font-Nunito text-sm inline-block">
+                    <NavLink to="/Shop" className="text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300 font-Nunito text-sm inline-block">
                       View Details
                     </NavLink>
                   </div>
@@ -68,7 +71,7 @@ const EmblaPerView = (props) => {
         </div>
 
       </div>
-        <NavLink to="/Collection">
+        <NavLink to="/Shop">
           <button className='text-white gap-3 mt-8 flex items-center border border-blue-500 px-3 py-2 hover:bg-blue-500 transition-all duration-300 rounded-lg font-Nunito text-base group'>
             Explore More Designs
             <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />

@@ -195,7 +195,7 @@ const Footer = () => {
           </div>
         </div>
         <a
-          href="https://sanniolayinka-dxz1.onrender.com/"
+          href="https://sannifolio.vercel.app/"
           target="_blank"
           className="font-Anek hover:opacity-50 ease-linear delay-75 flex gap-1 justify-center items-center my-4 text-white text-center mb-4 sma:text-base mda:text-base"
         >
