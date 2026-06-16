@@ -39,7 +39,7 @@ const Contact = () => {
 
   return (
     <div className="bg-[#0F1621] min-h-screen">
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 py-5 sm:px-6 lg:px-8">
         <div className="relative w-full h-[420px] rounded-2xl overflow-hidden mt-8">
           <img
             src={Klodinsuit}

@@ -8,7 +8,7 @@ import TailorPrecise from '../assets/Images/tailorprecise.jpeg'
 import PatternDraft from '../assets/Images/patterndraft.jpg'
 import NigerianPair from '../assets/Images/SiteImg/HomgBg1.jpg'
 import { ReadyWearColl } from "../Utils/index";
-import Readysuit from '../assets/Images/Readysuits.jpg'
+import Readysuit from '../assets/Images/SiteImg/personalbrand.png'
 import Aboutsuitss from '../assets/Images/AboutSuitss.jpg'
 
 const Services = () => {
@@ -129,7 +129,7 @@ const Services = () => {
           <div className="mt-12">
             <div className="flex sma:flex-col justify-around mda:flex-col">
               <div className="relative">
-                <img src={Readysuit} className="w-[400px] rounded h-[400px] object-cover" alt="" />
+                <img src={Readysuit} className="w-[400px] rounded h-[500px] object-cover" alt="" />
                 <div className="absolute -bottom-10 left-20 -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-md">
                   <h3 className="font-Manrope text-2xl text-blue-500 capitalize">1000+</h3>
                   <p className="font-Nunito text-base text-slate-400">Clients styled across <br /> 20+ countries</p>
@@ -158,7 +158,7 @@ const Services = () => {
         </div>
         {/* Testimonials Slider */}
         <div className="mt-20">
-          <h2 className="text-center text-white text-4xl sma:text-2xl mda:text-2xl font-Playfair">What Clients Say</h2>
+          <h2 className="text-center text-white text-4xl sma:text-2xl mda:text-2xl font-Playfair underline underline-offset-8 pb-6">What Our Clients Say</h2>
           <TestimonialsSlider />
         </div>
       </section>

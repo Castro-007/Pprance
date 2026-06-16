@@ -1,7 +1,7 @@
 import React from "react";
 import SuitHero from "../assets/Images/Aboutsuit.jpg";
-import DressHero from "../assets/Images/DressHero.jpg";
-import Aboutcity from "../assets/Images/Aboutcity.jpg";
+import DressHero from "../assets/Images/SiteImg/crafting2.png";
+import Aboutcity from "../assets/Images/SiteImg/Roots&Heritage.png";
 import Accordion from "../components/Accordion";
 import AboutSuitss from "../assets/Images/AboutSuitss.jpg";
 import SewingBg from "../assets/Images/pranceSewing.jpeg";
@@ -59,11 +59,11 @@ const About = () => {
           <div className="basis-[40%]">
             <img
               src={Aboutcity}
-              className="w-[600px] h-[400px] rounded object-cover "
+              className="w-[600px] h-[500px] rounded object-cover "
               alt=""
             />
             <h6 className="font-Manrope text-blue-500 text-sm float-right mt-3">
-              FIG. 01 - THE GENESIS OF{" "}
+              THE GENESIS OF{" "}
               <span className="text-white">P.PRANCE</span>
             </h6>
           </div>

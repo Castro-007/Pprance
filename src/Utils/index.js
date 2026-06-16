@@ -40,6 +40,7 @@ import { FaCalendar, FaGlobe, FaStar } from "react-icons/fa";
 
 
 
+
 export const BlogData = [
   {
     Id: 1,
@@ -297,6 +298,10 @@ export const ReadyWearColl =[
     HeadTxt: "Premium Quality",
     DescTxt: "Guaranteed durability with reinforced stitching and high-grade materials"
   },
+]
+
+export const PRODUCTS = [
+
 ]
 
 
